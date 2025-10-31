@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プレミアム会員ページ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in-page">
+    <div class="member-container">
+        <header class="header">
+            <div>
+                <h1>PREMIUM MEMBERS</h1>
+                <div class="plan-badge premium">PREMIUM PLAN</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="user-info"></div>
+                <button onclick="logout()" class="logout-btn">ログアウト</button>
+            </div>
+        </header>
+
+        <main>
+            <h2>プレミアム会員サービス</h2>
+            <p style="color: #c0c0c0; margin-bottom: 30px;">
+                プレミアムプランでご利用いただけるサービス一覧です。
+                ベーシックプランのサービスに加えて、より高品質なサービスをご提供いたします。
+            </p>
+
+            <div class="services-grid" id="servicesContainer">
+                <!-- サービスはJavaScriptで動的に生成されます -->
+            </div>
+
+            <div style="margin-top: 50px;">
+                <h3>プレミアム限定サービス</h3>
+                <div style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.05)); padding: 20px; border-radius: 15px; margin-top: 20px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 215, 0, 0.2);">✓ クリニックオーナー権取得サポート</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 215, 0, 0.2);">✓ B戻しサービス特別プログラム</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 215, 0, 0.2);">✓ 池内さんの絵画（30号・50号）優先購入権</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255, 215, 0, 0.2);">✓ 高級レンタカー優待サービス</li>
+                        <li style="padding: 10px 0;">✓ ベーシックプラン全サービス利用可能</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <h3>VIPプランへのアップグレード</h3>
+                <div style="background: rgba(231, 76, 60, 0.1); padding: 20px; border-radius: 15px; margin-top: 20px; border: 1px solid rgba(231, 76, 60, 0.3);">
+                    <p style="color: #e74c3c; font-weight: bold;">さらに上質なサービスをお求めの方へ</p>
+                    <p style="margin-top: 10px;">VIPプランでは海外法人オーナー権、専属秘書サービス、運転手付きアルファードなど、最上位のサービスをご利用いただけます。</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // ページ初期化
+        const user = initializePage('premium');
+        if (user) {
+            displayServices(user.plan, 'servicesContainer');
+        }
+    </script>
+</body>
+</html>
