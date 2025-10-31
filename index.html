@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会員サイト - ログイン</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- ログインアニメーション動画 -->
+        <video id="loginVideo" class="login-video" muted preload="metadata">
+            <source src="logIn.mp4" type="video/mp4">
+            お使いのブラウザは動画をサポートしていません。
+        </video>
+        
+        <!-- ダークアウト用オーバーレイ -->
+        <div id="videoOverlay" class="video-overlay"></div>
+        
+        <div class="login-form-container" id="loginForm">
+            <div class="logo">
+                <h1>PREMIUM MEMBERS</h1>
+                <p>会員専用サイト</p>
+            </div>
+            
+            <form id="loginFormElement" class="login-form">
+                <div class="form-group">
+                    <label for="username">ユーザーID</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">パスワード</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">ログイン</button>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+</body>
+</html>
